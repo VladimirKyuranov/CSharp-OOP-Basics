@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-public class Child
+﻿namespace DefiningClasses
 {
-    public string Name { get; set; }
-    public string Birthday { get; set; }
-
-    public Child(string name, string birthday)
+    public class Child
     {
-        Name = name;
-        Birthday = birthday;
-    }
+        public string Name { get; set; }
+        public string Birthday { get; set; }
 
-    public override string ToString()
-    {
-        return $"{Name} {Birthday}";
+        public Child(string name, string birthday)
+        {
+            Name = name;
+            Birthday = birthday;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} {Birthday}";
+        }
     }
 }

@@ -1,52 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-class Rectangle
+﻿namespace DefiningClasses
 {
-    private string id;
-    private double width;
-    private double heigth;
-    private double x;
-    private double y;
-
-    public string Id
+    class Rectangle
     {
-        get { return id; }
-        set { id = value; }
-    }
+        private string id;
+        private double width;
+        private double heigth;
+        private double x;
+        private double y;
 
-    public double Width
-    {
-        get { return width; }
-        set { width = value; }
-    }
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-    public double Heigth
-    {
-        get { return heigth; }
-        set { heigth = value; }
-    }
+        public double Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
 
-    public double X
-    {
-        get { return x; }
-        set { x = value; }
-    }
+        public double Heigth
+        {
+            get { return heigth; }
+            set { heigth = value; }
+        }
 
-    public double Y
-    {
-        get { return y; }
-        set { y = value; }
-    }
+        public double X
+        {
+            get { return x; }
+            set { x = value; }
+        }
 
-    public bool Intersection(Rectangle rectangle)
-    {
-        bool outside = 
-            X + Width < rectangle.X ||
-            rectangle.X + rectangle.Width < X ||
-            Y + Heigth < rectangle.Y ||
-            rectangle.Y + rectangle.Heigth < Y;
-        return !outside;
+        public double Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        public bool Intersection(Rectangle rectangle)
+        {
+            bool outside =
+                X + Width < rectangle.X ||
+                rectangle.X + rectangle.Width < X ||
+                Y + Heigth < rectangle.Y ||
+                rectangle.Y + rectangle.Heigth < Y;
+            return !outside;
+        }
     }
 }

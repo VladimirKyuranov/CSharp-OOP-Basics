@@ -1,35 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-public class Pokemon
+﻿namespace DefiningClasses
 {
-    private string name;
-    private string element;
-    private int health;
-
-    public string Name
+    public class Pokemon
     {
-        get { return name; }
-        set { name = value; }
-    }
+        private string name;
+        private string element;
+        private int health;
 
-    public string Element
-    {
-        get { return element; }
-        set { element = value; }
-    }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
-    public int Health
-    {
-        get { return health; }
-        set { health = value; }
-    }
+        public string Element
+        {
+            get { return element; }
+            set { element = value; }
+        }
 
-    public Pokemon(string name, string element, int health)
-    {
-        this.name = name;
-        this.element = element;
-        this.health = health;
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+
+        public Pokemon(string name, string element, int health)
+        {
+            this.name = name;
+            this.element = element;
+            this.health = health;
+        }
     }
 }

@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-public class Pokemon
+﻿namespace DefiningClasses
 {
-    public string Name { get; set; }
-    public string Type { get; set; }
-
-    public Pokemon(string name, string type)
+    public class Pokemon
     {
-        Name = name;
-        Type = type;
-    }
+        public string Name { get; set; }
+        public string Type { get; set; }
 
-    public override string ToString()
-    {
-        return $"{Name} {Type}";
+        public Pokemon(string name, string type)
+        {
+            Name = name;
+            Type = type;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} {Type}";
+        }
     }
 }

@@ -1,65 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-public class Person
+namespace DefiningClasses
 {
-    private string name;
-    private string birthday;
-    private List<Person> parents;
-    private List<Person> children;
-
-    public string Name
+    public class Person
     {
-        get { return name; }
-        set { name = value; }
-    }
+        private string name;
+        private string birthday;
+        private List<Person> parents;
+        private List<Person> children;
 
-    public string Birthday
-    {
-        get { return birthday; }
-        set { birthday = value; }
-    }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
-    public List<Person> Parents
-    {
-        get { return parents; }
-        set { parents = value; }
-    }
+        public string Birthday
+        {
+            get { return birthday; }
+            set { birthday = value; }
+        }
 
-    public List<Person> Children
-    {
-        get { return children; }
-        set { children = value; }
-    }
+        public List<Person> Parents
+        {
+            get { return parents; }
+            set { parents = value; }
+        }
 
-    public Person()
-    {
-        parents = new List<Person>();
-        children = new List<Person>();
-    }
+        public List<Person> Children
+        {
+            get { return children; }
+            set { children = value; }
+        }
 
-    public Person(string name, string birthday)
-        :this()
-    {
-        this.name = name;
-        this.birthday = birthday;
-    }
+        public Person()
+        {
+            parents = new List<Person>();
+            children = new List<Person>();
+        }
 
-    public void AddChild(Person person)
-    {
-        children.Add(person);
-    }
+        public Person(string name, string birthday)
+            : this()
+        {
+            this.name = name;
+            this.birthday = birthday;
+        }
 
-    public void AddParent(Person person)
-    {
-        parents.Add(person);
-    }
+        public void AddChild(Person person)
+        {
+            children.Add(person);
+        }
 
-    public override string ToString()
-    {
-        string line = Environment.NewLine;
+        public void AddParent(Person person)
+        {
+            parents.Add(person);
+        }
 
-        return $"{name} {birthday}";
+        public override string ToString()
+        {
+            string line = Environment.NewLine;
+
+            return $"{name} {birthday}";
+        }
     }
 }

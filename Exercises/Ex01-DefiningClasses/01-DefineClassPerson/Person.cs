@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-public class Person
+﻿namespace DefiningClasses
 {
-    private string name;
-    private int age;
-
-    public string Name
+    public class Person
     {
-        get { return name; }
-        set { name = value; }
-    }
+        private string name;
+        private int age;
 
-    public int Age
-    {
-        get { return age; }
-        set { age = value; }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public int Age
+        {
+            get { return age; }
+            set { age = value; }
+        }
     }
 }

@@ -1,46 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-public class Car
+namespace DefiningClasses
 {
-    private string model;
-    private Engine engine;
-    private string weight;
-    private string color;
-
-    public string Model
+    public class Car
     {
-        get { return model; }
-        set { model = value; }
-    }
+        private string model;
+        private Engine engine;
+        private string weight;
+        private string color;
 
-    public Engine Engine
-    {
-        get { return engine; }
-        set { engine = value; }
-    }
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
 
-    public string Weight
-    {
-        get { return weight; }
-        set { weight = value; }
-    }
+        public Engine Engine
+        {
+            get { return engine; }
+            set { engine = value; }
+        }
 
-    public string Color
-    {
-        get { return color; }
-        set { color = value; }
-    }
+        public string Weight
+        {
+            get { return weight; }
+            set { weight = value; }
+        }
 
-    public Car()
-    {
-        weight = "n/a";
-        color = "n/a";
-    }
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
 
-    public override string ToString()
-    {
-        return $"{model}:{Environment.NewLine}  {engine}{Environment.NewLine}  Weight: {weight}{Environment.NewLine}  Color: {color}";
+        public Car()
+        {
+            weight = "n/a";
+            color = "n/a";
+        }
+
+        public override string ToString()
+        {
+            return $"{model}:{Environment.NewLine}  {engine}{Environment.NewLine}  Weight: {weight}{Environment.NewLine}  Color: {color}";
+        }
     }
 }

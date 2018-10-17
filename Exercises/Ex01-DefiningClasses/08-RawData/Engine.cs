@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-public class Engine
+﻿namespace DefiningClasses
 {
-    public int Speed { get; set; }
-    public int Power { get; set; }
+    public class Engine
+    {
+        public int Speed { get; set; }
+        public int Power { get; set; }
+    }
 }

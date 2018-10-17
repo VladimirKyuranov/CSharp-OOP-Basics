@@ -1,15 +1,18 @@
 ﻿using System;
 
-class Dates
+namespace DefiningClasses
 {
-    static void Main(string[] args)
+    public class Dates
     {
-        string firstDate = Console.ReadLine();
-        string secondDate = Console.ReadLine();
+        static void Main(string[] args)
+        {
+            string firstDate = Console.ReadLine();
+            string secondDate = Console.ReadLine();
 
-        DateModifier dateModifier = new DateModifier();
-        int dayDifference = dateModifier.GetDaysBetweenDates(firstDate, secondDate);
+            StartUp dateModifier = new StartUp();
+            int dayDifference = dateModifier.GetDaysBetweenDates(firstDate, secondDate);
 
-        Console.WriteLine(dayDifference);
+            Console.WriteLine(dayDifference);
+        }
     }
 }

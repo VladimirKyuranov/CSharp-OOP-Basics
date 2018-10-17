@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-public class Car
+namespace DefiningClasses
 {
-    public string Model { get; set; }
-    public Engine Engine { get; set; }
-    public Cargo Cargo { get; set; }
-    public List<Tire> Tires { get; set; }
-
-    public Car()
+    public class Car
     {
-        Tires = new List<Tire>(4);
-    }
+        public string Model { get; set; }
+        public Engine Engine { get; set; }
+        public Cargo Cargo { get; set; }
+        public List<Tire> Tires { get; set; }
 
-    public override string ToString()
-    {
-        return Model;
+        public Car()
+        {
+            Tires = new List<Tire>(4);
+        }
+
+        public override string ToString()
+        {
+            return Model;
+        }
     }
 }

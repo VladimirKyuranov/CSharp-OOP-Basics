@@ -1,46 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-public class Trainer
+namespace DefiningClasses
 {
-    private string name;
-    private int badgesCount;
-    private List<Pokemon> pokemons;
-
-    public string Name
+    public class Trainer
     {
-        get { return name; }
-        set { name = value; }
-    }
+        private string name;
+        private int badgesCount;
+        private List<Pokemon> pokemons;
 
-    public int BadgesCount
-    {
-        get { return badgesCount; }
-        set { badgesCount = value; }
-    }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
-    public List<Pokemon> Pokemons
-    {
-        get { return pokemons; }
-        set { pokemons = value; }
-    }
+        public int BadgesCount
+        {
+            get { return badgesCount; }
+            set { badgesCount = value; }
+        }
 
-    public Trainer()
-    {
-        badgesCount = 0;
-        pokemons = new List<Pokemon>();
-    }
+        public List<Pokemon> Pokemons
+        {
+            get { return pokemons; }
+            set { pokemons = value; }
+        }
 
-    public Trainer(string name, Pokemon pokemon)
-        :this()
-    {
-        this.name = name;
-        this.pokemons.Add(pokemon);
-    }
+        public Trainer()
+        {
+            badgesCount = 0;
+            pokemons = new List<Pokemon>();
+        }
 
-    public override string ToString()
-    {
-        return $"{name} {badgesCount} {pokemons.Count}";
+        public Trainer(string name, Pokemon pokemon)
+            : this()
+        {
+            this.name = name;
+            this.pokemons.Add(pokemon);
+        }
+
+        public override string ToString()
+        {
+            return $"{name} {badgesCount} {pokemons.Count}";
+        }
     }
 }

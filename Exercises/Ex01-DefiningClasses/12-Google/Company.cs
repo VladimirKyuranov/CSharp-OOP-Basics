@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-public class Company
+namespace DefiningClasses
 {
-    public string Name { get; set; }
-    public string Department { get; set; }
-    public decimal Salary { get; set; }
-
-    public Company(string name, string department, decimal salary)
+    public class Company
     {
-        Name = name;
-        Department = department;
-        Salary = salary;
-    }
+        public string Name { get; set; }
+        public string Department { get; set; }
+        public decimal Salary { get; set; }
 
-    public override string ToString()
-    {
-        return $"{Environment.NewLine}{Name} {Department} {Salary:F2}";
+        public Company(string name, string department, decimal salary)
+        {
+            Name = name;
+            Department = department;
+            Salary = salary;
+        }
+
+        public override string ToString()
+        {
+            return $"{Environment.NewLine}{Name} {Department} {Salary:F2}";
+        }
     }
 }

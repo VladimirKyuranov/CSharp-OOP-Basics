@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-public class Car
+namespace DefiningClasses
 {
-    public string Model { get; set; }
-    public int Speed { get; set; }
-
-    public Car(string model, int speed)
+    public class Car
     {
-        Model = model;
-        Speed = speed;
-    }
+        public string Model { get; set; }
+        public int Speed { get; set; }
 
-    public override string ToString()
-    {
-        return $"{Environment.NewLine}{Model} {Speed}";
+        public Car(string model, int speed)
+        {
+            Model = model;
+            Speed = speed;
+        }
+
+        public override string ToString()
+        {
+            return $"{Environment.NewLine}{Model} {Speed}";
+        }
     }
 }
