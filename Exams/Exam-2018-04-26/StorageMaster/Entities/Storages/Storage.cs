@@ -38,12 +38,12 @@ namespace StorageMaster.Entities.Storages
         {
             if (garageSlot >= this.GarageSlots)
             {
-                throw new InvalidOperationException("Invalid garage slot!");
+                throw new InvalidOperationException("Error: Invalid garage slot!");
             }
 
             if (this.garage[garageSlot] == null)
             {
-                throw new InvalidOperationException("No vehicle in this garage slot!");
+                throw new InvalidOperationException("Error: No vehicle in this garage slot!");
             }
 
             return this.garage[garageSlot];
@@ -57,7 +57,7 @@ namespace StorageMaster.Entities.Storages
 
             if (destinationSlot == -1)
             {
-                throw new InvalidOperationException("No room in garage!");
+                throw new InvalidOperationException("Error: No room in garage!");
             }
 
             this.garage[garageSlot] = null;
@@ -70,7 +70,7 @@ namespace StorageMaster.Entities.Storages
         {
             if (this.IsFull)
             {
-                throw new InvalidOperationException("Storage is full!");
+                throw new InvalidOperationException("Error: Storage is full!");
             }
 
             Vehicle vehicle = this.GetVehicle(garageSlot);
@@ -95,7 +95,7 @@ namespace StorageMaster.Entities.Storages
             var sortedVehicles = this.Garage
                 .Select(v => v == null ? "empty" : v.GetType().Name);
 
-            sb.AppendLine($"Stock (${this.products.Sum(p => p.Weight)}/{this.Capacity}: [{string.Join(", ", sortedProducts.Select(p => p.Key))}]");
+            sb.AppendLine($"Stock ({this.products.Sum(p => p.Weight)}/{this.Capacity}): [{string.Join(", ", sortedProducts.Select(p => $"{p.Key} ({p.Count()})"))}]");
             sb.AppendLine($"Garage: [{string.Join("|", sortedVehicles)}]");
             return sb.ToString().TrimEnd();
         }

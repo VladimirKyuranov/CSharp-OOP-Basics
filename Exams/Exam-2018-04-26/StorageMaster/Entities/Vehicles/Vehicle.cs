@@ -27,7 +27,7 @@ namespace StorageMaster.Entities.Vehicles
         {
             if (IsFull)
             {
-                throw new InvalidOperationException("Vehicle is full!");
+                throw new InvalidOperationException("Error: Vehicle is full!");
             }
 
             this.trunk.Add(product);
@@ -37,7 +37,7 @@ namespace StorageMaster.Entities.Vehicles
         {
             if (IsEmpty)
             {
-                throw new InvalidOperationException("No products left in vehicle!");
+                throw new InvalidOperationException("Error: No products left in vehicle!");
             }
 
             Product product = this.trunk.Last();

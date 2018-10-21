@@ -12,17 +12,14 @@ namespace StorageMaster.Entities.Factories
             Assembly assembly = Assembly.GetExecutingAssembly();
             Type model = assembly.GetTypes().FirstOrDefault(v => v.Name == type);
 
-            if (model == null)
+            if (model == null ||
+                model.IsAbstract ||
+                !typeof(Vehicle).IsAssignableFrom(model))
             {
-                throw new InvalidOperationException("Invalid vehicle type!");
+                throw new InvalidOperationException("Error: Invalid vehicle type!");
             }
 
-            if (!typeof(Vehicle).IsAssignableFrom(model))
-            {
-                throw new InvalidOperationException("Invalid vehicle type!");
-            }
-
-            Vehicle vehicle = (Vehicle)Activator.CreateInstance(model);
+           Vehicle vehicle = (Vehicle)Activator.CreateInstance(model);
             return vehicle;
         }
     }

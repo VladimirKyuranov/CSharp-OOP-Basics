@@ -54,7 +54,7 @@ namespace StorageMaster.Core
 
                     if (product == null)
                     {
-                        throw new InvalidOperationException($"{productName} is out of stock!");
+                        throw new InvalidOperationException($"Error: {productName} is out of stock!");
                     }
 
                     int index = productPool.LastIndexOf(product);
@@ -74,12 +74,12 @@ namespace StorageMaster.Core
 
             if (source == null)
             {
-                throw new InvalidOperationException("Invalid source storage!");
+                throw new InvalidOperationException("Error: Invalid source storage!");
             }
 
             if (destination == null)
             {
-                throw new InvalidOperationException("Invalid destination storage!");
+                throw new InvalidOperationException("Error: Invalid destination storage!");
             }
 
             string vehicleType = source.GetVehicle(sourceGarageSlot).GetType().Name;
@@ -110,7 +110,7 @@ namespace StorageMaster.Core
 
             foreach (var storage in sortedStorages)
             {
-                sb.AppendLine($"{storage.Name}");
+                sb.AppendLine($"{storage.Name}:");
                 sb.AppendLine($"Storage worth: ${storage.Products.Sum(p => p.Price):F2}");
             }
 

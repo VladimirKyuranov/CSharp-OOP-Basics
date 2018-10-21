@@ -1,8 +1,6 @@
-﻿using StorageMaster.Entities.Products;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace StorageMaster.Core
 {
@@ -78,9 +76,16 @@ namespace StorageMaster.Core
 
                     Console.WriteLine(result);
                 }
-                catch (InvalidOperationException e)
+                catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    if (e.InnerException != null)
+                    {
+                        Console.WriteLine(e.InnerException.Message);
+                    }
+                    else
+                    {
+                        Console.WriteLine(e.Message);
+                    }
                 }
             }
 

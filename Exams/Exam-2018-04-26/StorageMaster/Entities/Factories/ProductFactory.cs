@@ -12,14 +12,11 @@ namespace StorageMaster.Entities.Factories
             Assembly assembly = Assembly.GetExecutingAssembly();
             Type model = assembly.GetTypes().FirstOrDefault(v => v.Name == type);
 
-            if (model == null)
+            if (model == null ||
+                model.IsAbstract ||
+                !typeof(Product).IsAssignableFrom(model))
             {
-                throw new InvalidOperationException("Invalid product type!");
-            }
-
-            if (!typeof(Product).IsAssignableFrom(model))
-            {
-                throw new InvalidOperationException("Invalid product type!");
+                throw new InvalidOperationException("Error: Invalid product type!");
             }
 
             Product Product = (Product)Activator.CreateInstance(model, price);

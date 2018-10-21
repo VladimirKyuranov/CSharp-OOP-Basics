@@ -2,7 +2,7 @@
 {
     public class Semi : Vehicle
     {
-        private const int defaultCapacity = 2;
+        private const int defaultCapacity = 10;
         public Semi()
             : base(defaultCapacity)
         {
