@@ -13,7 +13,9 @@ namespace StorageMaster.Entities.Storages
         {
             vehicleFactory.CreateVehicle("Van"),
             vehicleFactory.CreateVehicle("Van"),
-            vehicleFactory.CreateVehicle("Van")
+            vehicleFactory.CreateVehicle("Van"),
+            null,
+            null
         };
 
         public DistributionCenter(string name)

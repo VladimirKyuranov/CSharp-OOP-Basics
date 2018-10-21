@@ -3,6 +3,7 @@ using StorageMaster.Entities.Vehicles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace StorageMaster.Entities.Storages
 {
@@ -82,6 +83,21 @@ namespace StorageMaster.Entities.Storages
             }
 
             return unloadedProducts;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            var sortedProducts = this.products
+                .GroupBy(p => p.GetType().Name)
+                .OrderByDescending(p => p.Count())
+                .ThenBy(p => p.Key);
+            var sortedVehicles = this.Garage
+                .Select(v => v == null ? "empty" : v.GetType().Name);
+
+            sb.AppendLine($"Stock (${this.products.Sum(p => p.Weight)}/{this.Capacity}: [{string.Join(", ", sortedProducts.Select(p => p.Key))}]");
+            sb.AppendLine($"Garage: [{string.Join("|", sortedVehicles)}]");
+            return sb.ToString().TrimEnd();
         }
     }
 }

@@ -14,7 +14,14 @@ namespace StorageMaster.Entities.Storages
         {
             vehicleFactory.CreateVehicle("Semi"),
             vehicleFactory.CreateVehicle("Semi"),
-            vehicleFactory.CreateVehicle("Semi")
+            vehicleFactory.CreateVehicle("Semi"),
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
         };
 
         public Warehouse(string name)

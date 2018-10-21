@@ -11,7 +11,8 @@ namespace StorageMaster.Entities.Storages
         private const int defaultGarageSlots = 2;
         private static IEnumerable<Vehicle> defaultVehicles = new List<Vehicle>
         {
-            vehicleFactory.CreateVehicle("Truck")
+            vehicleFactory.CreateVehicle("Truck"),
+            null
         };
 
         public AutomatedWarehouse(string name)
