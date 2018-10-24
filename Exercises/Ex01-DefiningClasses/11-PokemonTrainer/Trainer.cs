@@ -7,22 +7,15 @@ namespace DefiningClasses
         private List<Pokemon> pokemons;
 
         public string Name { get; }
-       
-        public int BadgesCount { get; private set; }
+
+        public int BadgesCount { get; private set; } = 0;
 
         public IReadOnlyCollection<Pokemon> Pokemons => this.pokemons.AsReadOnly();
 
-        public Trainer()
-        {
-            this.BadgesCount = 0;
-            pokemons = new List<Pokemon>();
-        }
-
         public Trainer(string name, Pokemon pokemon)
-            : this()
         {
             this.Name = name;
-            this.pokemons.Add(pokemon);
+            this.pokemons = new List<Pokemon>() { pokemon };
         }
 
         public void AddPokemon(Pokemon pokemon)
