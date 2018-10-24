@@ -12,10 +12,10 @@ namespace DefiningClasses
 
         public IReadOnlyCollection<Pokemon> Pokemons => this.pokemons.AsReadOnly();
 
-        public Trainer(string name, Pokemon pokemon)
+        public Trainer(string name)
         {
             this.Name = name;
-            this.pokemons = new List<Pokemon>() { pokemon };
+            this.pokemons = new List<Pokemon>();
         }
 
         public void AddPokemon(Pokemon pokemon)

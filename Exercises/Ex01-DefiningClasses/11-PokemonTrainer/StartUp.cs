@@ -19,16 +19,14 @@ namespace DefiningClasses
                 string pokemonElement = inputArgs[2];
                 int pokemonHealth = int.Parse(inputArgs[3]);
                 Pokemon pokemon = new Pokemon(pokemonName, pokemonElement, pokemonHealth);
-                Trainer trainer = new Trainer(trainerName, pokemon);
+                Trainer trainer = new Trainer(trainerName);
 
-                if (trainers.ContainsKey(trainer.Name) == false)
+                if (!trainers.ContainsKey(trainer.Name))
                 {
                     trainers.Add(trainer.Name, trainer);
                 }
-                else
-                {
-                    trainers[trainer.Name].AddPokemon(pokemon);
-                }
+
+                trainers[trainer.Name].AddPokemon(pokemon);
             }
 
             while ((element = Console.ReadLine()) != "End")
@@ -46,7 +44,7 @@ namespace DefiningClasses
                 }
             }
 
-            Console.WriteLine(string.Join(Environment.NewLine, 
+            Console.WriteLine(string.Join(Environment.NewLine,
                 trainers.Values
                 .OrderByDescending(t => t.BadgesCount)));
         }
