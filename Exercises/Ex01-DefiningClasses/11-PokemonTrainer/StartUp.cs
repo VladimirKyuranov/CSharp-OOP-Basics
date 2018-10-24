@@ -19,14 +19,13 @@ namespace DefiningClasses
                 string pokemonElement = inputArgs[2];
                 int pokemonHealth = int.Parse(inputArgs[3]);
                 Pokemon pokemon = new Pokemon(pokemonName, pokemonElement, pokemonHealth);
-                Trainer trainer = new Trainer(trainerName);
 
-                if (!trainers.ContainsKey(trainer.Name))
+                if (!trainers.ContainsKey(trainerName))
                 {
-                    trainers.Add(trainer.Name, trainer);
+                    trainers.Add(trainerName, new Trainer(trainerName));
                 }
 
-                trainers[trainer.Name].AddPokemon(pokemon);
+                trainers[trainerName].AddPokemon(pokemon);
             }
 
             while ((element = Console.ReadLine()) != "End")
