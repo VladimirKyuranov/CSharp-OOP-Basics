@@ -36,7 +36,7 @@ namespace DefiningClasses
 
         public override string ToString()
         {
-            return $"{Name} {BadgesCount} {pokemons.Count}";
+            return $"{this.Name} {this.BadgesCount} {this.pokemons.Count}";
         }
     }
 }
