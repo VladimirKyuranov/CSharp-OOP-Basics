@@ -30,7 +30,7 @@ namespace DefiningClasses
                 }
                 else
                 {
-                    trainers[trainer.Name].Pokemons.Add(pokemon);
+                    trainers[trainer.Name].AddPokemon(pokemon);
                 }
             }
 
@@ -40,17 +40,18 @@ namespace DefiningClasses
                 {
                     if (trainer.Pokemons.Any(p => p.Element == element))
                     {
-                        trainer.BadgesCount++;
+                        trainer.AddBadge();
                     }
                     else
                     {
-                        trainer.Pokemons.ForEach(p => p.Health -= 10);
-                        trainer.Pokemons.RemoveAll(p => p.Health <= 0);
+                        trainer.TakeDamage();
                     }
                 }
             }
 
-            Console.WriteLine(string.Join(Environment.NewLine, trainers.Values.OrderByDescending(t => t.BadgesCount)));
+            Console.WriteLine(string.Join(Environment.NewLine, 
+                trainers.Values
+                .OrderByDescending(t => t.BadgesCount)));
         }
     }
 }

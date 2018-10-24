@@ -6,7 +6,7 @@ namespace StorageMaster.Entities.Products
     {
         private double price;
 
-        public Product(double price, double weight)
+        protected Product(double price, double weight)
         {
             this.Price = price;
             this.Weight = weight;

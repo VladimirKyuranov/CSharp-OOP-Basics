@@ -7,7 +7,7 @@ namespace StorageMaster.Entities.Vehicles
 {
     public abstract class Vehicle
     {
-        private List<Product> trunk;
+        private readonly List<Product> trunk;
 
         public Vehicle(int capacity)
         {
@@ -19,7 +19,7 @@ namespace StorageMaster.Entities.Vehicles
         
         public IReadOnlyCollection<Product> Trunk => this.trunk.AsReadOnly();
 
-        public bool IsFull => this.trunk.Sum(p => p.Weight) >= this.Capacity;
+        public bool IsFull => this.Trunk.Sum(p => p.Weight) >= this.Capacity;
 
         public bool IsEmpty => this.Trunk.Count == 0;
 

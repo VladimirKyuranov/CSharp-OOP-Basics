@@ -59,8 +59,6 @@ namespace DefiningClasses
 
         public override string ToString()
         {
-            string line = Environment.NewLine;
-
             return $"{name} {birthday}";
         }
     }
