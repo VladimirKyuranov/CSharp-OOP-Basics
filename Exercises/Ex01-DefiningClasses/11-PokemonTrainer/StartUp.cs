@@ -9,18 +9,15 @@ namespace DefiningClasses
         static void Main(string[] args)
         {
             var trainers = new Dictionary<string, Trainer>();
-            string input;
-            string element;
+            string input, element;
 
             while ((input = Console.ReadLine()) != "Tournament")
             {
                 string[] inputArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
                 string trainerName = inputArgs[0];
                 string pokemonName = inputArgs[1];
                 string pokemonElement = inputArgs[2];
                 int pokemonHealth = int.Parse(inputArgs[3]);
-
                 Pokemon pokemon = new Pokemon(pokemonName, pokemonElement, pokemonHealth);
                 Trainer trainer = new Trainer(trainerName, pokemon);
 
