@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-public class LeutenantGeneral : Private, ILeutenantGeneral
+public class LieutenantGeneral : Private, ILieutenantGeneral
 {
     private ICollection<ISoldier> privates;
 
-    public LeutenantGeneral(int id, string firstName, string lastName, decimal salary)
+    public LieutenantGeneral(int id, string firstName, string lastName, decimal salary)
         : base(id, firstName, lastName, salary)
     {
         this.privates = new List<ISoldier>();

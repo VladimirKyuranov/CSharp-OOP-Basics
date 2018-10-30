@@ -26,14 +26,14 @@ class StartUp
 						Private @private = new Private(id, firstName, lastName, salary);
 						army.Add(id, @private);
 						break;
-					case "LeutenantGeneral":
-						LeutenantGeneral leutenantGeneral = new LeutenantGeneral(id, firstName, lastName, salary);
+					case "LieutenantGeneral":
+						LieutenantGeneral LieutenantGeneral = new LieutenantGeneral(id, firstName, lastName, salary);
 						int[] soldiers = soldierArgs.Skip(5).Select(int.Parse).ToArray();
 						foreach (var soldier in soldiers)
 						{
-							leutenantGeneral.AddSoldier(army[soldier]);
+							LieutenantGeneral.AddSoldier(army[soldier]);
 						}
-						army.Add(id, leutenantGeneral);
+						army.Add(id, LieutenantGeneral);
 						break;
 					case "Engineer":
 						string engineerCorps = soldierArgs[5];

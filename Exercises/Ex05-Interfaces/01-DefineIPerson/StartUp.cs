@@ -1,15 +1,18 @@
 ﻿using System;
 
-class StartUp
+namespace PersonInfo
 {
-    static void Main(string[] args)
+    public class StartUp
     {
-        string name = Console.ReadLine();
-        int age = int.Parse(Console.ReadLine());
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            int age = int.Parse(Console.ReadLine());
 
-        IPerson person = new Citizen(name, age);
+            IPerson person = new Citizen(name, age);
 
-        Console.WriteLine(person.Name);
-        Console.WriteLine(person.Age);
+            Console.WriteLine(person.Name);
+            Console.WriteLine(person.Age);
+        }
     }
 }

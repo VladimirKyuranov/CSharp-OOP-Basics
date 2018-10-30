@@ -1,4 +1,7 @@
-﻿public interface IBirthable
+﻿namespace PersonInfo
 {
-   string Birthdate { get; }
+    public interface IBirthable
+    {
+        string Birthdate { get; }
+    }
 }

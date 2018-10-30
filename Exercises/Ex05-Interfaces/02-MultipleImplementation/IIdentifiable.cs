@@ -1,4 +1,7 @@
-﻿public interface IIdentifiable
+﻿namespace PersonInfo
 {
-    string Id { get; }
+    public interface IIdentifiable
+    {
+        string Id { get; }
+    }
 }
