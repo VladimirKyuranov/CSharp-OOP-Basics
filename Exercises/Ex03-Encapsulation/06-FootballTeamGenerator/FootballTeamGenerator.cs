@@ -25,7 +25,7 @@ class FootballTeamGenerator
                         teams.Add(teamName, team);
                         break;
                     case "Add":
-                        Validation.TeamExists(teamName, teams);
+                        Validator.TeamExists(teamName, teams);
                         string playerName = commandArgs[2];
                         List<int> stats = commandArgs
                             .Skip(3)
@@ -35,12 +35,12 @@ class FootballTeamGenerator
                         teams[teamName].AddPlayer(player);
                         break;
                     case "Remove":
-                        Validation.TeamExists(teamName, teams);
+                        Validator.TeamExists(teamName, teams);
                         playerName = commandArgs[2];
                         teams[teamName].RemovePlayer(playerName);
                         break;
                     case "Rating":
-                        Validation.TeamExists(teamName, teams);
+                        Validator.TeamExists(teamName, teams);
                         teams[teamName].SetRating();
                         Console.WriteLine(teams[teamName]);
                         break;

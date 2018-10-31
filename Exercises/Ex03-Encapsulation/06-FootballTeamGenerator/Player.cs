@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 public class Player
 {
@@ -16,72 +14,72 @@ public class Player
 
     public string Name
     {
-        get { return name; }
+        get { return this.name; }
         private set
         {
-            Validation.Name(value);
-            name = value;
+            Validator.Name(value);
+            this.name = value;
         }
     }
 
     public int Endurance
     {
-        get { return endurance; }
+        get { return this.endurance; }
         private set
         {
-            Validation.Stat("Endurance", value);
-            endurance = value;
+            Validator.Stat("Endurance", value);
+            this.endurance = value;
         }
     }
 
     public int Sprint
     {
-        get { return sprint; }
+        get { return this.sprint; }
         private set
         {
-            Validation.Stat("Sprint", value);
-            sprint = value;
+            Validator.Stat("Sprint", value);
+            this.sprint = value;
         }
     }
 
     public int Dribble
     {
-        get { return dribble; }
+        get { return this.dribble; }
         private set
         {
-            Validation.Stat("Dribble", value);
-            dribble = value;
+            Validator.Stat("Dribble", value);
+            this.dribble = value;
         }
     }
 
     public int Passing
     {
-        get { return passing; }
+        get { return this.passing; }
         private set
         {
-            Validation.Stat("Passing", value);
-            passing = value;
+            Validator.Stat("Passing", value);
+            this.passing = value;
         }
     }
 
     public int Shooting
     {
-        get { return shooting; }
+        get { return this.shooting; }
         set
         {
-            Validation.Stat("Shooting", value);
-            shooting = value;
+            Validator.Stat("Shooting", value);
+            this.shooting = value;
         }
     }
 
     public Player(string name, List<int> stats)
     {
-        Name = name;
-        Endurance = stats[0];
-        Sprint = stats[1];
-        Dribble = stats[2];
-        Passing = stats[3];
-        Shooting = stats[4];
-        SkillLevel = stats.Average();
+        this.Name = name;
+        this.Endurance = stats[0];
+        this.Sprint = stats[1];
+        this.Dribble = stats[2];
+        this.Passing = stats[3];
+        this.Shooting = stats[4];
+        this.SkillLevel = stats.Average();
     }
 }
