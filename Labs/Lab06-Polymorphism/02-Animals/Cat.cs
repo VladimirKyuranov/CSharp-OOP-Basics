@@ -1,18 +1,18 @@
-﻿using System.Text;
+﻿using System;
 
-public class Cat : Animal
+namespace Animals
 {
-	public Cat(string name, string favouriteFood)
-		: base(name, favouriteFood)
-	{
-	}
 
-	public override string ExplainSelf()
-	{
-		StringBuilder builder = new StringBuilder();
-		builder.AppendLine(base.ExplainSelf())
-			.AppendLine("MEEOW");
-		string result = builder.ToString().TrimEnd();
-		return result;
-	}
+    public class Cat : Animal
+    {
+        public Cat(string name, string favouriteFood)
+            : base(name, favouriteFood)
+        {
+        }
+
+        public override string ExplainSelf()
+        {
+            return base.ExplainSelf() + Environment.NewLine + "MEEOW";
+        }
+    }
 }

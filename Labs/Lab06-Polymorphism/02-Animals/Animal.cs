@@ -1,17 +1,34 @@
-﻿public class Animal
+﻿namespace Animals
 {
-	protected string name;
-	protected string favouriteFood;
+    public class Animal
+    {
+        private string name;
+        private string favouriteFood;
 
-	public Animal(string name, string favouriteFood)
-	{
-		this.name = name;
-		this.favouriteFood = favouriteFood;
-	}
+        public string FavouriteFood
+        {
+            get { return favouriteFood; }
+            private set { favouriteFood = value; }
+        }
 
-	public virtual string ExplainSelf()
-	{
-		string result = $"I am {this.name} and my favourite food is {this.favouriteFood}";
-		return result;
-	}
+
+        public string Name
+        {
+            get { return name; }
+            private set { name = value; }
+        }
+
+
+        public Animal(string name, string favouriteFood)
+        {
+            this.Name = name;
+            this.FavouriteFood = favouriteFood;
+        }
+
+        public virtual string ExplainSelf()
+        {
+            string result = $"I am {this.Name} and my favourite food is {this.FavouriteFood}";
+            return result;
+        }
+    }
 }
